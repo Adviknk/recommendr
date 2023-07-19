@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()
 
 
-app.get("/api", (req, res) => {
+
+app.get("/", (req, res) => {
     res.json({"users":["User 1", "User 2", "User 3"]})
 })
 
