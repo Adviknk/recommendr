@@ -5,11 +5,11 @@ const app = express();
 
 app.get('/', (request, response) => {
 
-    // readFile('./navigation.html', 'utf8', (err, html) => {
+    readFile('./navigation.html', 'utf8', (err, html) => {
         
-    //     response.send(html);
-    // });
-    response.render('navigation');
+        response.send(html);
+    });
+    response.render('navigation.html');
 
 });
 
