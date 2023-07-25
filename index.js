@@ -9,7 +9,6 @@ app.get('/', (request, response) => {
         
         response.send(html);
     });
-    response.render('navigation.html');
 
 });
 
