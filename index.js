@@ -13,4 +13,5 @@ app.get('/', (request, response) => {
 });
 
 
+// Where the app is running
 app.listen(process.env.PORT || 3000, () => console.log('App is available on http://localhost:3000'));
