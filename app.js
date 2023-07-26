@@ -15,12 +15,13 @@ app.set('view engine', 'ejs');
 //     res.render('main', data);
 // });
 
-app.get('/', (req, res) => {
+app.get(['/', '/home'], (req, res) => {
     const data = {
-      pageTitle: 'New Home',
+      pageTitle: 'Home | Recommendr',
       file: 'home',
       variables: {
-        button: 'New Button'
+        var1: 'First Variable',
+        var2: 'Second Variable'
       }
     };
     res.render('main', data);
