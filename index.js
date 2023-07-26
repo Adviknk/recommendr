@@ -1,4 +1,4 @@
-const { readFile, readFileSync } = require('fs')
+const { readFile, readFileSync } = require('fs');
 const express = require('express');
 
 const app = express();
