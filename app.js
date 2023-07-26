@@ -1,6 +1,17 @@
-// Use log function in the logger.js
+const express = require('express');
+const ejs = require('ejs');
 
-const logger = require('./logger');
+const app = express();
+app.set('view engine', 'ejs');
 
-console.log(logger);
+app.get('/', (req, res) => {
+    const data = {
+      pageTitle: 'Home',
+      file: 'home'
+    };
+    res.render('main', data);
+});
 
+
+// Where the app is running
+app.listen(process.env.PORT || 3000, () => console.log('App is available on http://localhost:3000'));
