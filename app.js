@@ -4,17 +4,6 @@ const ejs = require('ejs');
 const app = express();
 app.set('view engine', 'ejs');
 
-// app.get('/testing', (req, res) => {
-//     const data = {
-//       pageTitle: 'Home',
-//       file: 'home',
-//       variables: {
-//         button: 'Account'
-//       }
-//     };
-//     res.render('main', data);
-// });
-
 app.get(['/', '/home'], (req, res) => {
     const data = {
       pageTitle: 'Home | Recommendr',
