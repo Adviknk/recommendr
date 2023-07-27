@@ -1,0 +1,23 @@
+<%- include('navigation') %>
+<main class="container">
+    <h1 name="login" class="my-4">Log In</h1>
+    <form action="/login" method="post">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" id="username" class="form-control" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input name="email" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input name="password" class="form-control">
+          </div>
+          <div class="mb-3">
+            {% block label %}{% endblock %}  
+        </div>
+        <a href="/signup"  class="btn btn-primary">Sign Up</a>
+        <button type='submit' class="btn btn-primary">Submit</button>
+    </form>
+</main>
