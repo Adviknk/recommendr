@@ -1,29 +1,23 @@
 <%- include('navigation') %>
-<%- include('sidebar') %>
-
-<div class="container">
-    <h1 class="mt-4 custom-h1">Welcome to Equity Empire</h1>
-</div>
-
-<div class="container">
-    <h1 class="mt-4 custom-h1"><%= var1%></h1>
-    <h1 class="mt-4 custom-h1"><%= var2%></h1>
-</div>
-
-<div class="image-overlay position-relative">
-    <div class="">
-        <div class="d-flex justify-content-center">
-            <a class="btn btn-primary btn-lg mt-2 big-btn" href="#">Create a League</a>
-        </div>
-        <div class="d-flex justify-content-center">
-            <a class="btn btn-primary btn-lg mt-2 big-btn" href="#">Join a League</a>
-        </div>
-    </div>
-</div>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 bg-light">
+        <h4 class = "mt-4">Filters</h4>
+        <ul>
+          <li>Filter 1</li>
+          <li>Filter 2</li>
+          <li>Filter 3</li>
+        </ul>
+      </div>
   
-
-<div class="container">
-    <h1 class="mt-4 custom-h3">How To Play</h1>
+      <div class="col-md-9">
+        <h1>Recommendr</h1>
+        <div class="container">
+            <h1 class="mt-4 custom-h1"><%= var1%></h1>
+            <h1 class="mt-4 custom-h1"><%= var2%></h1>
+        </div>
+      </div>
+    </div>
 </div>
 
 

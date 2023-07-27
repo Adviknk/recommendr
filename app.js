@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session'); 
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
+const { get_login, post_login, get_signup, post_signup } = require('./account');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -27,62 +28,6 @@ app.get(['/', '/home'], (req, res) => {
 
 });
 
-app.get(['/login'], (req, res) => {
-  if (req.session.username) {
-    // if 'username' is already in session
-    res.redirect('/account');
-  } else {
-    const data = {
-      pageTitle: 'Log In | Recommendr',
-      file: 'login',
-      variables: {
-
-      }
-    };
-    res.render('main', data);
-  }
-});
-
-app.post('/login', (req, res) => {
-  valid = true;
-  if(valid){
-    const { username } = req.body;
-    req.session.username = username;
-    res.redirect('/home');
-  }
-  else {
-    res.redirect('/login');
-  }
-});
-
-app.get(['/signup'], (req, res) => {
-  if (req.session.username) {
-    // if 'username' is already in session
-    res.redirect('/account');
-  } else {
-    const data = {
-      pageTitle: 'Sign Up | Recommendr',
-      file: 'signup',
-      variables: {
-
-      }
-    };
-    res.render('main', data);
-  }
-});
-
-app.post('/signup', (req, res) => {
-  valid = true;
-  if(valid){
-    const { username } = req.body;
-    req.session.username = username;
-    res.redirect('/home');
-  }
-  else {
-    res.redirect('/signup');
-  }
-});
-
 
 app.get(['/account'], (req, res) => {
   if (req.session.username) {
@@ -94,7 +39,6 @@ app.get(['/account'], (req, res) => {
       }
     };
     res.render('main', data);
-    //res.send(`Welcome to your dashboard, ${req.session.username}!`);
   } else {
     res.redirect('/login');
   }
@@ -114,6 +58,11 @@ app.get(['/post'], (req, res) => {
     res.redirect('/login');
   }
 });
+
+app.get(['/login'], get_login);
+app.post('/login', post_login);
+app.get(['/signup'], get_signup);
+app.post('/signup', post_signup);
 
 
 // Where the app is running
