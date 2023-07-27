@@ -1,0 +1,29 @@
+<%- include('navigation') %>
+<main class="container">
+    <h1 class="my-4">Sign Up</h1>
+      <form action="/signup" method="POST">
+        <div class="mb-3">
+          <label class="form-label">First Name</label>
+          <input name='first' class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Last Name</label>
+          <input name='last' class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" id="username" class="form-control" name="username" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email address</label>
+          <input name="email" class="form-control">
+          <div class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input name="password" class="form-control">
+        </div>
+        <a href="/login"  class="btn btn-primary">Log In</a>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</main>

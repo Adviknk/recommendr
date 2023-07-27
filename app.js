@@ -30,7 +30,7 @@ app.get(['/', '/home'], (req, res) => {
 app.get(['/login'], (req, res) => {
   if (req.session.username) {
     // if 'username' is already in session
-    res.redirect('/dashboard');
+    res.redirect('/account');
   } else {
     const data = {
       pageTitle: 'Log In | Recommendr',
@@ -52,6 +52,34 @@ app.post('/login', (req, res) => {
   }
   else {
     res.redirect('/login');
+  }
+});
+
+app.get(['/signup'], (req, res) => {
+  if (req.session.username) {
+    // if 'username' is already in session
+    res.redirect('/account');
+  } else {
+    const data = {
+      pageTitle: 'Sign Up | Recommendr',
+      file: 'signup',
+      variables: {
+
+      }
+    };
+    res.render('main', data);
+  }
+});
+
+app.post('/signup', (req, res) => {
+  valid = true;
+  if(valid){
+    const { username } = req.body;
+    req.session.username = username;
+    res.redirect('/home');
+  }
+  else {
+    res.redirect('/signup');
   }
 });
 
