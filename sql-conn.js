@@ -19,8 +19,17 @@ async function run(query) {
     }
 }
 
+async function add(query, params) {
+    try {
+        const [results] = await promiseConnection.query(query, params);
+        return true;
+    } catch (err) {
+        return false;
+    }
+}
 module.exports = {
-    run
+    run,
+    add
 }
         
 

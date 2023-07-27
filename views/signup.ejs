@@ -4,11 +4,11 @@
       <form action="/signup" method="POST">
         <div class="mb-3">
           <label class="form-label">First Name</label>
-          <input name='first' class="form-control">
+          <input type="text" id="first" class="form-control" name="first" required>
         </div>
         <div class="mb-3">
           <label class="form-label">Last Name</label>
-          <input name='last' class="form-control">
+          <input type="text" id="last" class="form-control" name="last" required>
         </div>
         <div class="mb-3">
           <label class="form-label">Username</label>
@@ -16,12 +16,12 @@
         </div>
         <div class="mb-3">
           <label class="form-label">Email address</label>
-          <input name="email" class="form-control">
+          <input type="text" id="email" class="form-control" name="email" required>
           <div class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Password</label>
-          <input name="password" class="form-control">
+          <input type="text" id="password" class="form-control" name="password" required>
         </div>
         <a href="/login"  class="btn btn-primary">Log In</a>
         <button type="submit" class="btn btn-primary">Submit</button>
