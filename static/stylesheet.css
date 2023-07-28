@@ -9,6 +9,17 @@
     background-color: rgb(255, 223, 167);
 }
 
+.star-rating {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.2);
+    /* cursor: pointer; */
+  }
+  
+  .star-rating .star:hover,
+  .star-rating .star.selected {
+    color: rgb(0, 0, 0);
+  }
+
 .light-brown {
     background-color: rgb(255, 238, 210);
 }

@@ -1,6 +1,4 @@
 
-
-
 get_create = (req, res) => {
     if (req.session.username) {
         // if 'username' is already in session
