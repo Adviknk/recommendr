@@ -10,7 +10,28 @@ dupRec("/image.jpeg", "This is another title", "This is the description", 2, "En
 dupRec("/image.jpeg", "This is another title", "This is the description", 1, "Food", "123 Main Street", "https://www.google.com");
 
 dupRec("/image.jpeg", "This is another title", "This is the description", 0, "Activity", "123 Main Street", "https://www.google.com");
-
+console.log("hi")
+function data() {
+    var posts = JSON.stringify(variables);
+    console.log("hi")
+    // Check if the 'posts' variable is not empty and contains data
+    if (posts && posts.length > 0) {
+        // Loop through the 'posts' array and display the information for each post
+        for (var i = 0; i < posts.length; i++) {
+            var post = posts[i];
+            document.write('<div>');
+            document.write('<h2>' + post.title + '</h2>');
+            document.write('<p>' + post.description + '</p>');
+            document.write('<img src="' + post.image + '" alt="Image">');
+            document.write('<a href="' + post.url + '">Read More</a>');
+            // Add other fields as needed
+            document.write('</div>');
+        }
+    } else {
+        // Display a message if no posts are available
+        document.write('<p>No posts found.</p>');
+    }
+}
 
 
 // Add event listener to each star

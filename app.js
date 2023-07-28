@@ -3,7 +3,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const { get_login, post_login, get_signup, post_signup, logout } = require('./account');
-const { get_create, post_create } = require('./posts');
+const { get_create, post_create, get_posts } = require('./posts');
 const { user_info } = require('./get-info');
 
 const app = express();
@@ -16,14 +16,12 @@ app.use(session({
 }));
 app.use(express.static('static'));
 
-app.get(['/', '/home'], (req, res) => {
+app.get(['/', '/home'], async (req, res) => {
+    posts = await get_posts();
     const data = {
       pageTitle: 'Home | Recommendr',
       file: 'home',
-      variables: {
-        var1: 'First Variable',
-        var2: 'Second Variable'
-      }
+      variables: posts
     };
     // Checking if the username is there
     console.log(req.session.username)
