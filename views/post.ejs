@@ -1,2 +1,15 @@
 <%- include('navigation') %>
 
+<div class="container">
+    <h1 class="mt-4 custom-h1">Create A Recommendation</h1>
+</div>
+<main class="container">
+    <form action="/create" method="POST">
+        <div class="mb-3">
+          <label class="form-label">League ID</label>
+          <input name='id' class="form-control">
+          <div class="form-text">Cannot have any spaces</div>
+        <a href="/home"  class="btn btn-primary right-btn">Cancel</a>
+        <button type="submit" class="btn btn-primary right-btn">Submit</button>
+    </form>
+</main>

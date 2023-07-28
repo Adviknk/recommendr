@@ -2,7 +2,8 @@ const express = require('express');
 const session = require('express-session'); 
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
-const { get_login, post_login, get_signup, post_signup } = require('./account');
+const { get_login, post_login, get_signup, post_signup, logout } = require('./account');
+const { get_create, post_create } = require('./posts');
 const { user_info } = require('./get-info');
 
 const app = express();
@@ -13,6 +14,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(express.static('static'));
 
 app.get(['/', '/home'], (req, res) => {
     const data = {
@@ -65,6 +67,9 @@ app.get(['/login'], get_login);
 app.post('/login', post_login);
 app.get(['/signup'], get_signup);
 app.post('/signup', post_signup);
+app.get('/create', get_create);
+app.post('/create', post_create);
+app.get('/logout', logout);
 
 
 // Where the app is running

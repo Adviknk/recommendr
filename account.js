@@ -60,6 +60,11 @@ post_signup = async (req, res) => {
     }
 };
 
+logout = (req,res) => {
+    delete req.session.username;
+    res.redirect('/home');
+}
+
 async function check_signup(first, last, username, email, password) {
     if(await exists(username)) {
         return false;
@@ -79,5 +84,6 @@ module.exports = {
     get_login,
     post_login,
     get_signup,
-    post_signup
+    post_signup,
+    logout
   };
