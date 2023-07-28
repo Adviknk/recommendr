@@ -5,6 +5,14 @@
     font-weight: bold;
 }
 
+.brown {
+    background-color: rgb(255, 223, 167);
+}
+
+.light-brown {
+    background-color: rgb(255, 238, 210);
+}
+
 .custom-h3 {
     text-align: center; /* Aligns the header in the middle */
     font-family: Arial, sans-serif; /* Changes the font */
