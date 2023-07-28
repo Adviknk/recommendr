@@ -27,9 +27,20 @@ async function add(query, params) {
         return false;
     }
 }
+
+async function result(query) {
+    try {
+        const [results] = await promiseConnection.query(query);
+        return results;
+    } catch (err) {
+        return null;
+    }
+}
+
 module.exports = {
     run,
-    add
+    add,
+    result
 }
         
 

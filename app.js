@@ -3,6 +3,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const { get_login, post_login, get_signup, post_signup } = require('./account');
+const { user_info } = require('./get-info');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -29,14 +30,15 @@ app.get(['/', '/home'], (req, res) => {
 });
 
 
-app.get(['/account'], (req, res) => {
+app.get(['/account'], async (req, res) => {
   if (req.session.username) {
+    user_id = req.session.username;
+    user_array = await user_info("SELECT * FROM recommendrUsers WHERE username = '" + user_id + "'");
+    user_dict = user_array[0];
     const data = {
       pageTitle: 'Account | Recommendr',
       file: 'account',
-      variables: {
-
-      }
+      variables: user_dict
     };
     res.render('main', data);
   } else {

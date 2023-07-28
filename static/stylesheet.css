@@ -1,0 +1,52 @@
+.custom-h1 {
+    text-align: center; /* Aligns the header in the middle */
+    font-family: Arial, sans-serif; /* Changes the font */
+    font-size: 50px; /* Changes the font size */
+    font-weight: bold;
+}
+
+.custom-h3 {
+    text-align: center; /* Aligns the header in the middle */
+    font-family: Arial, sans-serif; /* Changes the font */
+    font-size: 35px; /* Changes the font size */
+    font-weight: bold;
+}
+
+.left {
+    text-align: left; /* Aligns the header in the middle */
+}
+
+.custom-right-h3 {
+    font-family: Arial, sans-serif; /* Changes the font */
+    font-size: 35px; /* Changes the font size */
+    font-weight: bold;
+}
+
+.right-btn {
+    text-align: center; 
+    font-family: Arial, sans-serif;
+    font-size: 20px; 
+}
+
+.big-btn {
+    width: 30%; /* Set the desired width, for example, 100% */
+
+}
+
+.purple{
+    background-color:blueviolet;
+    color: aliceblue
+}
+.purple:hover {
+    background-color: blueviolet;
+}
+
+.carousel-item img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(100%);
+    }
