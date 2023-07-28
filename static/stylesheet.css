@@ -4,7 +4,40 @@
     font-size: 50px; /* Changes the font size */
     font-weight: bold;
 }
-
+.col-md-8 {
+    position: relative;
+  }
+.address {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: gray;
+}
+.grey-box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%; /* Set the desired width for the grey-box */
+    margin: 0 auto; /* Center the grey-box horizontally */
+}
+.gray-button {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    color: #333;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+}
+.gray-button:hover {
+    background-color: #f0f0f0;
+}
+  
+.grey-box p {
+    font-size: 14px; /* Adjust the font size as needed */
+    color: #888; /* Grey color for the text */
+    margin: 0; /* Remove default margin for the <p> tag */
+}
 .brown {
     background-color: rgb(255, 223, 167);
 }
@@ -21,7 +54,15 @@
   }
 
 .light-brown {
-    background-color: rgb(255, 238, 210);
+    background-color: rgb(255, 238, 210);    
+}
+
+.border-black {
+    border-right: 1px solid black;
+}
+
+.buttom-black {
+    border-bottom: 1px solid black;
 }
 
 .custom-h3 {
@@ -51,21 +92,3 @@
     width: 30%; /* Set the desired width, for example, 100% */
 
 }
-
-.purple{
-    background-color:blueviolet;
-    color: aliceblue
-}
-.purple:hover {
-    background-color: blueviolet;
-}
-
-.carousel-item img {
-    width: 100%;
-    object-fit: contain;
-}
-
-.carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      filter: invert(100%);
-    }

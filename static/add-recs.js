@@ -1,15 +1,15 @@
 
-dupRec("/image.jpeg", "This is another title", "This is the description", 3);
+dupRec("/image.jpeg", "This is another title", "This is the description", 3, "Food", "123 Main Street", "http://www.google.com");
 
-dupRec("/image.jpeg", "This is another title", "This is the description", 4);
+dupRec("/image.jpeg", "This is another title", "This is the description", 4, "Activity", "123 Main Street", "https://www.google.com");
 
-dupRec("/image.jpeg", "This is another title", "This is the description", 5);
+dupRec("/image.jpeg", "This is another title", "This is the description", 5, "Entertainment", "123 Main Street", "https://www.youtube.com");
 
-dupRec("/image.jpeg", "This is another title", "This is the description", 2);
+dupRec("/image.jpeg", "This is another title", "This is the description", 2, "Entertainment", "123 Main Street", "https://yahoo.com");
 
-dupRec("/image.jpeg", "This is another title", "This is the description", 1);
+dupRec("/image.jpeg", "This is another title", "This is the description", 1, "Food", "123 Main Street", "https://www.google.com");
 
-dupRec("/image.jpeg", "This is another title", "This is the description", 0);
+dupRec("/image.jpeg", "This is another title", "This is the description", 0, "Activity", "123 Main Street", "https://www.google.com");
 
 
 
@@ -44,7 +44,7 @@ function addHeader() {
     col.appendChild(header)
 }
 
-function dupRec(image, title, description, num_stars) {
+function dupRec(image, title, description, num_stars, category, address, link) {
     // Duplicate the div container
     var col = document.querySelector("#right-col");
     const originalDiv = document.querySelector("#rec");
@@ -55,10 +55,21 @@ function dupRec(image, title, description, num_stars) {
     duplicateImg.src = image;
     duplicateImg.alt = "Another Image";
 
-    const duplicateTitle = duplicateDiv.querySelector("h2");
+    const addyBox = duplicateDiv.querySelector("#address");
+    addy = addyBox.querySelector('p')
+    addy.textContent = address
+
+    const duplicateTitle = duplicateDiv.querySelector("#title");
     duplicateTitle.textContent = title;
 
-    const duplicateDescription = duplicateDiv.querySelector("p");
+    const linkBox = duplicateDiv.querySelector("#link");
+    linkBox.textContent = link;
+    linkBox.setAttribute('href', link);
+
+    const button = duplicateDiv.querySelector("#cat");
+    button.textContent = category;
+
+    const duplicateDescription = duplicateDiv.querySelector("#des");
     duplicateDescription.textContent = description;
 
     const stars = duplicateDiv.querySelectorAll(".star-rating .star");

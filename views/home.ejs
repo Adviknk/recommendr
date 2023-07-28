@@ -1,7 +1,7 @@
 <%- include('navigation') %>
 <div class="brown container-fluid">
     <div class="row">
-      <div class="light-brown col-md-2">
+      <div class="light-brown border-black col-md-2">
         <h4 class = "mt-4">Filters</h4>
         <ul>
           <li>Filter 1</li>
@@ -25,8 +25,11 @@
                   <img src="/stock-background.jpg" class="img-fluid rounded" alt="Image">
                 </div>
                 <div class="col-md-8">
+                  <div class="address" id="address">
+                    <p>123 Main Street, City, Country</p>
+                  </div>
                   <!-- Title -->
-                  <h2 class="mb-3">Your Title</h2>
+                  <h2 id="title" class="mb-1">Your Title</h2>
                   <div class="star-rating">
                     <span class="star" data-rating="1">&#9733;</span>
                     <span class="star" data-rating="2">&#9733;</span>
@@ -34,10 +37,17 @@
                     <span class="star" data-rating="4">&#9733;</span>
                     <span class="star" data-rating="5">&#9733;</span>
                   </div>
+                  <button id="cat" class="btn gray-button">Food</button>
                   <!-- Description -->
-                  <p>
+                  <p id="des">
+                    Your description goes here. You can add multiple lines of text to describe your content.
+                    Your description goes here. You can add multiple lines of text to describe your content.
+                    Your description goes here. You can add multiple lines of text to describe your content.
                     Your description goes here. You can add multiple lines of text to describe your content.
                   </p>
+                  <a id="link" class="btn gray-button"href="https://www.google.com" target="_blank">
+                    google.com
+                  </a>
                 </div>
               </div>
             </div>
