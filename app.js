@@ -17,11 +17,12 @@ app.use(session({
 app.use(express.static('static'));
 
 app.get(['/', '/home'], async (req, res) => {
-    posts = await get_posts();
+    temp = await get_posts();
+    stringPosts = JSON.stringify(temp)
     const data = {
       pageTitle: 'Home | Recommendr',
       file: 'home',
-      variables: posts
+      variables: stringPosts
     };
     // Checking if the username is there
     console.log(req.session.username)

@@ -9,7 +9,7 @@
   }
 .address {
     position: absolute;
-    top: 10px;
+    top: 35px;
     right: 10px;
     font-size: 12px;
     color: gray;
@@ -48,10 +48,10 @@
     /* cursor: pointer; */
   }
   
-  .star-rating .star:hover,
-  .star-rating .star.selected {
+.star-rating .star:hover,
+.star-rating .star.selected {
     color: rgb(0, 0, 0);
-  }
+}
 
 .light-brown {
     background-color: rgb(255, 238, 210);    
@@ -91,4 +91,7 @@
 .big-btn {
     width: 30%; /* Set the desired width, for example, 100% */
 
+}
+#information {
+    display: none;
 }
