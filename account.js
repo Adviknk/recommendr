@@ -17,6 +17,7 @@ get_login = (req, res) => {
 };
 
 post_login = async (req, res) => {
+    console.log(req.body)
     const { username, email, password } = req.body;
     valid = await check_login(username, email, password);
     if(valid){

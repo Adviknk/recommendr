@@ -18,7 +18,14 @@ get_create = (req, res) => {
 }
 
 post_create = (req, res) => {
+  console.log(req.body)
+  const keysArray = Object.keys(req.body);
+  if(keysArray.length != 5) {
+    res.redirect('/post')
+  }
+  else {
     res.redirect('/home')
+  }
 }
 
 async function get_posts() {

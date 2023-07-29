@@ -19,6 +19,14 @@ async function run(query) {
     }
 }
 
+async function quick_run(query) {
+    try {
+        await promiseConnection.query(query);
+    } catch (err) {
+        return false;
+    }
+}
+
 async function add(query, params) {
     try {
         const [results] = await promiseConnection.query(query, params);
@@ -40,7 +48,8 @@ async function result(query) {
 module.exports = {
     run,
     add,
-    result
+    result,
+    quick_run
 }
         
 

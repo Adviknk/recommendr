@@ -4,7 +4,7 @@
     <h1 class="mt-4 custom-h1">Create A Recommendation</h1>
 </div>
 <main class="container">
-    <form action="/create" method="POST">
+    <form id="myForm" action="/create" method="POST">
         <div class="mb-3">
           <label class="form-label">Title</label>
           <input type="text" id="title" class="form-control" name="title" required>
@@ -15,7 +15,22 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Category</label>
-            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="food" name="food">
+                <label class="form-check-label" for="food">Food</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="activity" name="activity">
+                <label class="form-check-label" for="activity">Activity</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="entertainment" name="entertainment">
+                <label class="form-check-label" for="entertainment">Entertainment</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="other" name="other">
+                <label class="form-check-label" for="other">Other</label>
+            </div>
         </div>
         <div class="mb-3">
             <label class="form-label">Rating</label>
@@ -34,6 +49,6 @@
             <input type="text" id="url" class="form-control" name="url" required>
         </div>
         <a href="/home"  class="btn btn-primary right-btn">Cancel</a>
-        <button type="submit" class="btn btn-primary right-btn">Submit</button>
+        <button id="submit" type="submit" class="btn btn-primary right-btn">Submit</button>
     </form>
 </main>
