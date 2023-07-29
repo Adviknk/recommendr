@@ -6,9 +6,33 @@
 <main class="container">
     <form action="/create" method="POST">
         <div class="mb-3">
-          <label class="form-label">League ID</label>
-          <input name='id' class="form-control">
-          <div class="form-text">Cannot have any spaces</div>
+          <label class="form-label">Title</label>
+          <input type="text" id="title" class="form-control" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <input type="text" id="description" class="form-control" name="description" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Rating</label>
+            
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image</label>
+            
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            <input type="text" id="address" class="form-control" name="address" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Url</label>
+            <input type="text" id="url" class="form-control" name="url" required>
+        </div>
         <a href="/home"  class="btn btn-primary right-btn">Cancel</a>
         <button type="submit" class="btn btn-primary right-btn">Submit</button>
     </form>
