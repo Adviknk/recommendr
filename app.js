@@ -3,7 +3,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const { get_login, post_login, get_signup, post_signup, logout } = require('./account');
-const { post_create, get_posts } = require('./posts');
+const { post_create, get_posts, upload } = require('./posts');
 const { user_info } = require('./get-info');
 
 const app = express();
@@ -62,7 +62,7 @@ app.get(['/post'], (req, res) => {
   }
 });
 
-app.post('/post', post_create);
+app.post('/post', upload.single('imageUpload'), post_create);
 
 app.get(['/login'], get_login);
 app.post('/login', post_login);
