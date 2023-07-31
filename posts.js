@@ -13,8 +13,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 post_create = (req, res) => {
-  console.log(req.body)
-  console.log(req.file)
+  // console.log(req.body)
+  // console.log(req.file)
   const keysArray = Object.keys(req.body);
   
   count = 0;
