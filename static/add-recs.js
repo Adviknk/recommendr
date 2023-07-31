@@ -1,55 +1,5 @@
 data()
-data()
-data()
 
-// function checklist() {
-//   const applyButton = document.getElementById("submit");
-//     applyButton.addEventListener("click", () => {
-//       const selectedItems = [];
-//       const checkboxes = document.querySelectorAll(".form-check-input");
-
-//       checkboxes.forEach(checkbox => {
-//         if (checkbox.checked) {
-//           selectedItems.push(checkbox.id);
-//         }
-//       });
-//       if(selectedItems.length > 1) {
-
-//       }
-//       console.log("Selected Items:", selectedItems);
-//       // You can perform any action with the selectedItems array here
-//   });
-// }
-// check()
-// function check() {
-//   const myForm = document.getElementById("myForm");
-//   const categoryCheckboxes = document.querySelectorAll(".form-check-input");
-//   const submitButton = document.getElementById("submit");
-
-//   // Event listener to check selected categories before form submission
-//   myForm.addEventListener("submit", (event) => {
-//     const selectedCategories = Array.from(categoryCheckboxes)
-//       .filter(checkbox => checkbox.checked)
-//       .map(checkbox => checkbox.id);
-
-//     if (selectedCategories.length !== 1) {
-//       event.preventDefault(); // Prevent form submission
-//       alert("Please select only one category.");
-//     }
-//   });
-
-//   // Event listener to update the category label when checkbox is clicked
-//   categoryCheckboxes.forEach(checkbox => {
-//     checkbox.addEventListener("click", () => {
-//       const selectedCategories = Array.from(categoryCheckboxes)
-//         .filter(checkbox => checkbox.checked)
-//         .map(checkbox => checkbox.id);
-
-//       const categoryLabel = document.getElementById("categoryLabel");
-//       categoryLabel.textContent = selectedCategories[0] || "Select a category";
-//     });
-//   });
-// }
 
 function data() {
     var postsData = JSON.parse(document.querySelector('#information').textContent);
@@ -126,3 +76,52 @@ function dupRec(image, title, description, num_stars, category, address, link) {
     // Append the duplicate div to the document
     col.appendChild(duplicateDiv);
 }
+
+// function checklist() {
+//   const applyButton = document.getElementById("submit");
+//     applyButton.addEventListener("click", () => {
+//       const selectedItems = [];
+//       const checkboxes = document.querySelectorAll(".form-check-input");
+
+//       checkboxes.forEach(checkbox => {
+//         if (checkbox.checked) {
+//           selectedItems.push(checkbox.id);
+//         }
+//       });
+//       if(selectedItems.length > 1) {
+
+//       }
+//       console.log("Selected Items:", selectedItems);
+//       // You can perform any action with the selectedItems array here
+//   });
+// }
+// check()
+// function check() {
+//   const myForm = document.getElementById("myForm");
+//   const categoryCheckboxes = document.querySelectorAll(".form-check-input");
+//   const submitButton = document.getElementById("submit");
+
+//   // Event listener to check selected categories before form submission
+//   myForm.addEventListener("submit", (event) => {
+//     const selectedCategories = Array.from(categoryCheckboxes)
+//       .filter(checkbox => checkbox.checked)
+//       .map(checkbox => checkbox.id);
+
+//     if (selectedCategories.length !== 1) {
+//       event.preventDefault(); // Prevent form submission
+//       alert("Please select only one category.");
+//     }
+//   });
+
+//   // Event listener to update the category label when checkbox is clicked
+//   categoryCheckboxes.forEach(checkbox => {
+//     checkbox.addEventListener("click", () => {
+//       const selectedCategories = Array.from(categoryCheckboxes)
+//         .filter(checkbox => checkbox.checked)
+//         .map(checkbox => checkbox.id);
+
+//       const categoryLabel = document.getElementById("categoryLabel");
+//       categoryLabel.textContent = selectedCategories[0] || "Select a category";
+//     });
+//   });
+// }
