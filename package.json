@@ -1,6 +1,9 @@
 {
   "name": "recommendr",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.17.0"
+  },
   "description": "Website for recommendations in all categories",
   "main": "index.js",
   "scripts": {
