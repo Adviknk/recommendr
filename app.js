@@ -1,5 +1,5 @@
 const express = require('express');
-const session = require('express-session'); 
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const { get_login, post_login, get_signup, post_signup, logout } = require('./account');
@@ -18,62 +18,62 @@ app.use(session({
 app.use(express.static('static'));
 
 app.get(['/', '/home'], async (req, res) => {
-    temp = await get_posts();
-    stringPosts = JSON.stringify(temp)
-    const data = {
-      pageTitle: 'Home | Recommendr',
-      file: 'home',
-      variables: stringPosts
-    };
-    // Checking if the username is there
-    // console.log(req.session.username)
-    res.render('main', data);
+  temp = await get_posts();
+  stringPosts = JSON.stringify(temp)
+  const data = {
+    pageTitle: 'Home | Recommendr',
+    file: 'home',
+    variables: stringPosts
+  };
+  // Checking if the username is there
+  // console.log(req.session.username)
+  res.render('main', data);
 
 });
 
-app.post(['/filter'], async (req, res) => {  
+app.post(['/filter'], async (req, res) => {
   const keysArray = Object.keys(req.body);
   queryString = "SELECT * FROM recommendations";
-  
-  queryString = queryString + " WHERE description LIKE '%" + req.body.search + "%'";
-  
 
-  if(req.body.Food) {
+  queryString = queryString + " WHERE description LIKE '%" + req.body.search + "%'";
+
+
+  if (req.body.Food) {
     queryString = queryString + " AND category = 'Food'";
   }
-  if(req.body.Activity) {
+  if (req.body.Activity) {
     queryString = queryString + " AND category = 'Activity'";
   }
-  if(req.body.Entertainment) {
+  if (req.body.Entertainment) {
     queryString = queryString + " AND category = 'Entertainment'";
   }
-  if(req.body.Other) {
+  if (req.body.Other) {
     queryString = queryString + " AND category = 'Other'";
   }
 
   stars = 0
 
-  if(keysArray.includes('one')) {
+  if (keysArray.includes('one')) {
     stars = 1;
   }
-  if(keysArray.includes('two')) {
+  if (keysArray.includes('two')) {
     stars = 2;
   }
-  if(keysArray.includes('three')) {
+  if (keysArray.includes('three')) {
     stars = 3;
   }
-  if(keysArray.includes('four')) {
+  if (keysArray.includes('four')) {
     stars = 4;
   }
-  if(keysArray.includes('five')) {
+  if (keysArray.includes('five')) {
     stars = 5;
   }
 
-  if(stars != 0) {
+  if (stars != 0) {
     queryString = queryString + " AND stars = " + stars;
   }
 
-  if(req.body.address) {
+  if (req.body.address) {
     queryString = queryString + " AND address LIKE '%" + req.body.address + "%'";
   }
 
