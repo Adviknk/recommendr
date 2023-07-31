@@ -46,7 +46,9 @@ function dupRec(image, title, description, num_stars, category, address, link) {
     // Duplicate the div container
     var col = document.querySelector("#right-col");
     const originalDiv = document.querySelector("#rec");
+    
     const duplicateDiv = originalDiv.cloneNode(true);
+    duplicateDiv.classList.remove("information");
     
     // Modify the content of the duplicate div
     const duplicateImg = duplicateDiv.querySelector("img");

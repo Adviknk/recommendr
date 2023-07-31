@@ -26,7 +26,7 @@ app.get(['/', '/home'], async (req, res) => {
       variables: stringPosts
     };
     // Checking if the username is there
-    console.log(req.session.username)
+    // console.log(req.session.username)
     res.render('main', data);
 
 });
@@ -51,7 +51,7 @@ app.post(['/filter'], async (req, res) => {
   }
 
 
-  console.log(queryString)
+  // console.log(queryString)
   temp = await result(queryString);
   stringPosts = JSON.stringify(temp)
   const data = {
