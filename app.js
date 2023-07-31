@@ -32,6 +32,7 @@ app.get(['/', '/home'], async (req, res) => {
 });
 
 app.post(['/filter'], async (req, res) => {  
+  const keysArray = Object.keys(req.body);
   queryString = "SELECT * FROM recommendations";
   
   queryString = queryString + " WHERE description LIKE '%" + req.body.search + "%'";
@@ -50,6 +51,31 @@ app.post(['/filter'], async (req, res) => {
     queryString = queryString + " AND category = 'Other'";
   }
 
+  stars = 0
+
+  if(keysArray.includes('one')) {
+    stars = 1;
+  }
+  if(keysArray.includes('two')) {
+    stars = 2;
+  }
+  if(keysArray.includes('three')) {
+    stars = 3;
+  }
+  if(keysArray.includes('four')) {
+    stars = 4;
+  }
+  if(keysArray.includes('five')) {
+    stars = 5;
+  }
+
+  if(stars != 0) {
+    queryString = queryString + " AND stars = " + stars;
+  }
+
+  if(req.body.address) {
+    queryString = queryString + " AND address LIKE '%" + req.body.address + "%'";
+  }
 
   // console.log(queryString)
   temp = await result(queryString);
@@ -60,7 +86,7 @@ app.post(['/filter'], async (req, res) => {
     variables: stringPosts
   };
   // Checking if the username is there
-  console.log(req.session.username)
+  // console.log(req.session.username)
   res.render('main', data);
 
 });
