@@ -5,6 +5,7 @@ const ejs = require('ejs');
 const { get_login, post_login, get_signup, post_signup, logout } = require('./account');
 const { post_create, get_posts, upload } = require('./posts');
 const { user_info } = require('./get-info');
+const { result } = require('./sql-conn');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -27,6 +28,40 @@ app.get(['/', '/home'], async (req, res) => {
     // Checking if the username is there
     console.log(req.session.username)
     res.render('main', data);
+
+});
+
+app.post(['/filter'], async (req, res) => {  
+  queryString = "SELECT * FROM recommendations";
+  
+  queryString = queryString + " WHERE description LIKE '%" + req.body.search + "%'";
+  
+
+  if(req.body.Food) {
+    queryString = queryString + " AND category = 'Food'";
+  }
+  if(req.body.Activity) {
+    queryString = queryString + " AND category = 'Activity'";
+  }
+  if(req.body.Entertainment) {
+    queryString = queryString + " AND category = 'Entertainment'";
+  }
+  if(req.body.Other) {
+    queryString = queryString + " AND category = 'Other'";
+  }
+
+
+  console.log(queryString)
+  temp = await result(queryString);
+  stringPosts = JSON.stringify(temp)
+  const data = {
+    pageTitle: 'Home | Recommendr',
+    file: 'home',
+    variables: stringPosts
+  };
+  // Checking if the username is there
+  console.log(req.session.username)
+  res.render('main', data);
 
 });
 
