@@ -6,11 +6,17 @@ const { get_login, post_login, get_signup, post_signup, logout } = require('./ac
 const { post_create, get_posts, upload } = require('./posts');
 const { user_info } = require('./get-info');
 const { result } = require('./sql-conn');
+const RedisStore = require('connect-redis')(session);
 
 const app = express();
+const redisOptions = {
+  host: 'your-redis-host', 
+  port: 6379
+};
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
+  store: new RedisStore(redisOptions),
   secret: 'your-secret-key',
   resave: false,
   saveUninitialized: true
