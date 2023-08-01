@@ -51,7 +51,7 @@ post_create = (req, res) => {
     stars = 5;
   }
 
-  commit("static/" + req.file.originalname, "commit")
+  commit("'static/" + req.file.originalname + "'", "Added new file")
   
   if(stars == 0 || count > 1 || count == 0) {
     res.redirect('/post')
