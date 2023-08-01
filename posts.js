@@ -57,7 +57,7 @@ post_create = (req, res) => {
     res.redirect('/post')
   }
   else {
-    quick_run("INSERT INTO recommendations (title, description, image, url, address, category, stars) VALUES ('" + req.body.title + "','" + req.body.description + "','" + req.file.originalname + "','" + req.body.url + "','" + req.body.address + "','" + keysArray[2] + "','" + stars + "')")
+    quick_run('INSERT INTO recommendations (title, description, image, url, address, category, stars) VALUES ("' + req.body.title + '","' + req.body.description + '","' + req.file.originalname + '","' + req.body.url + '","' + req.body.address + '","' + keysArray[2] + '","' + stars + '")')
     res.redirect('/home')
   }
 }
