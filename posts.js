@@ -1,6 +1,7 @@
 const { user_info } = require('./get-info');
 const { quick_run } = require('./sql-conn');
 const multer = require('multer');
+const { commit } = require('./commit');
 
 
 const storage = multer.diskStorage({
@@ -49,6 +50,8 @@ post_create = (req, res) => {
   if(keysArray.includes('five')) {
     stars = 5;
   }
+
+  commit("static/" + req.file.originalname, "commit")
   
   if(stars == 0 || count > 1 || count == 0) {
     res.redirect('/post')
