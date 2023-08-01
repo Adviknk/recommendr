@@ -22,7 +22,7 @@ exec(`git add ${newFilePath}`, gitOptions, (error, stdout, stderr) => {
   
       const remoteRepositoryUrl = 'https://github.com/Adviknk/recommendr';
 
-      exec('git push ${remoteRepositoryUrl} main', gitOptions, (error, stdout, stderr) => {
+      exec(`git push ${remoteRepositoryUrl} main`, gitOptions, (error, stdout, stderr) => {
         if (error) {
           console.error(`Error pushing the changes to the remote repository: ${error.message}`);
           return;
