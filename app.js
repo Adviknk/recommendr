@@ -1,5 +1,6 @@
 const express = require('express');
-const session = require('express-session');
+// const session = require('express-session');
+const session = require('cookie-session');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const { get_login, post_login, get_signup, post_signup, logout } = require('./account');
@@ -13,7 +14,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'your-secret-key',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie:{
+    secure: true
+  }
 }));
 app.use(express.static('static'));
 
